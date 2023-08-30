@@ -1,0 +1,15 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Some random packages that will most likely help the program. IE: Jest.",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "EF0601",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.6.4",
+    "typescript": "^5.2.2"
+  }
+}

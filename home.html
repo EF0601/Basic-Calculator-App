@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <div class="calculator">
+    <h2 id="inputValueBox">0</h2>
+    <div id="flexBox">
+      <div class="container">
+        <button class="key--operator" data-action="add" onclick="operateInput('add')">+</button>
+        <button class="key--operator" data-action="subtract" onclick="operateInput('subtract')">-</button>
+        <button class="key--operator" data-action="multiply" onclick="operateInput('multiply')">*</button>
+        <button class="key--operator" data-action="divide" onclick="operateInput('divide')">/</button>
+      </div>
+      <div class="container">
+        <div id="grid">
+          <button onclick="inputNumber('7')">7</button>
+          <button onclick="inputNumber('8')">8</button>
+          <button onclick="inputNumber('9')">9</button>
+          <button onclick="inputNumber('4')">4</button>
+          <button onclick="inputNumber('5')">5</button>
+          <button onclick="inputNumber('6')">6</button>
+          <button onclick="inputNumber('1')">1</button>
+          <button onclick="inputNumber('2')">2</button>
+          <button onclick="inputNumber('3')">3</button>
+        </div>
+        <button id="longBtn" onclick="inputNumber('0')">0</button>
+      </div>
+    </div>
+    <div class="footer">
+      <button data-action="decimal" onclick="inputNumber('.')">.</button>
+      <button data-action="clear" onclick="clearMemory()">Clear</button>
+      <button class="key--equal" data-action="calculate" onclick="calculate()">=</button>
+    </div>
+  </div>
+</body>
+<script src="./main.js"></script>
+
+</html>
