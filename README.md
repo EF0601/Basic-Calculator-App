@@ -7,4 +7,5 @@ Go to: https://ef0601.github.io/Basic-Calculator-App/home.html
 1. Go to the bottom of the release you desire, click download .zip file.
 2. Extract the .zip file.
 3. Find the folder in your storage.
-4. Double click on `home.html` to open it.
+4. (MacOS, WindowsOS, Linux ONLY) Double click on `home.html` to open it.
+4. (iOS, Android ONLY) Double click on `install.html` to open the installer and click the link.
