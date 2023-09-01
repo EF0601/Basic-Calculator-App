@@ -4,11 +4,26 @@ let firstMemory: number = 0;
 let secondMemory: number = 0;
 let inputMemory: Array<string> = [];
 let operationMemory: string = "";
+let decimal_: boolean = false;
 
 function inputNumber(number: string) {
     if (inputMemory.length < 10) {
-        inputMemory.push(number);
-        updateInput();
+        if (number == ".") {
+            if (decimal_ == false) {
+                if (inputMemory.length == 0) {
+                    inputMemory.push("0.");
+                }
+                else{
+                    inputMemory.push('.');
+                }
+                decimal_ = true;
+                updateInput();
+            }
+        }
+        else {
+            inputMemory.push(number);
+            updateInput();
+        }
     }
 }
 
@@ -87,3 +102,5 @@ function updateInput(): void {
         inputMemory.join("");
     console.log(inputMemory);
 }
+
+//TODO: fix decimal point spam
