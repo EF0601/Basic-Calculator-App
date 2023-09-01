@@ -31,6 +31,7 @@ function operateInput(operator: string) {
     if (inputMemory.length > 0) {
         firstMemory = Number(inputMemory.join(""));
         inputMemory = [];
+        decimal_ = false;
         switch (operator) {
             case "add":
                 document.getElementById("inputValueBox")!.textContent = "+";
@@ -55,6 +56,7 @@ function operateInput(operator: string) {
 function calculate() {
     if (inputMemory.length > 0) {
         secondMemory = Number(inputMemory.join(""));
+        decimal_ = false;
         inputMemory = [];
         switch (operationMemory) {
             case "add":
@@ -102,5 +104,3 @@ function updateInput(): void {
         inputMemory.join("");
     console.log(inputMemory);
 }
-
-//TODO: fix decimal point spam
