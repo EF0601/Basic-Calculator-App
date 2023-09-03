@@ -1,5 +1,5 @@
 # Access
-## SETUP FOR LAPTOPS & DESKTOPS (MacOS, WindowsOS, Linux) & SETUP FOR TABLETS AND CELL PHONES (iOS, Android)
+## SETUP FOR LAPTOPS & DESKTOPS (MacOS, WindowsOS, Linux) & SETUP FOR TABLETS AND CELL PHONES (Android)
 Two ways:
 ### Use the web version:
 Go to: https://ef0601.github.io/Basic-Calculator-App/home.html
@@ -8,4 +8,4 @@ Go to: https://ef0601.github.io/Basic-Calculator-App/home.html
 2. Extract the .zip file.
 3. Find the folder in your storage.
 4. (MacOS, WindowsOS, Linux ONLY) Double click on `home.html` to open it.
-4. (iOS, Android ONLY) Double click on `install.html` to open the installer and click the link.
+4. (Android ONLY) Double click on `install.html` to open the installer and click the link.
