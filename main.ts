@@ -12,15 +12,13 @@ function inputNumber(number: string) {
             if (decimal_ == false) {
                 if (inputMemory.length == 0) {
                     inputMemory.push("0.");
-                }
-                else{
-                    inputMemory.push('.');
+                } else {
+                    inputMemory.push(".");
                 }
                 decimal_ = true;
                 updateInput();
             }
-        }
-        else {
+        } else {
             inputMemory.push(number);
             updateInput();
         }
@@ -48,6 +46,10 @@ function operateInput(operator: string) {
             case "divide":
                 document.getElementById("inputValueBox")!.textContent = "/";
                 operationMemory = "divide";
+                break;
+            case "factorial":
+                document.getElementById("inputValueBox")!.textContent = "!";
+                operationMemory = "factorial";
                 break;
         }
         // updateInput();
@@ -80,14 +82,30 @@ function calculate() {
                 );
                 break;
         }
-        firstMemory = Number(
-            document.getElementById("inputValueBox")!.textContent
-        );
-        secondMemory = 0;
-        operationMemory = "";
-        inputMemory = [];
-        inputMemory.push(String(firstMemory));
-        updateInput();
+    } else {
+        if (operationMemory == "factorial") {
+            document.getElementById("inputValueBox")!.textContent = String(
+                factorial(firstMemory)
+            );
+        }
+    }
+    firstMemory = Number(document.getElementById("inputValueBox")!.textContent);
+    secondMemory = 0;
+    operationMemory = "";
+    inputMemory = [];
+    inputMemory.push(String(firstMemory));
+    updateInput();
+}
+
+function factorial(input: number) {
+    if (input == 0 || input == 1) {
+        return 1;
+    } else {
+        let output: number = input;
+        for (let i: number = input - 1; i > 1; i--) {
+            output = output * i;
+        }
+        return output;
     }
 }
 
