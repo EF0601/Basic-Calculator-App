@@ -14,12 +14,12 @@
         <h2 id="inputValueBox">0</h2>
         <div id="flexBox">
             <div class="container" id="narrowGrid">
-                <button class="key--operator" data-action="add" onclick="operateInput('add')">+</button>
-                <button class="key--operator" data-action="subtract" onclick="operateInput('subtract')">-</button>
-                <button class="key--operator" data-action="multiply" onclick="operateInput('multiply')">*</button>
-                <button class="key--operator" data-action="divide" onclick="operateInput('divide')">/</button>
-                <button class="key--operator" data-action="divide" onclick="operateInput('factorial')">!</button>
-                <button class="key--operator" data-action="divide" onclick="operateInput('exponent')">^</button>
+                <button class="key--operator" data-action="add" onclick="operateInput('+')">+</button>
+                <button class="key--operator" data-action="subtract" onclick="operateInput('-')">-</button>
+                <button class="key--operator" data-action="multiply" onclick="operateInput('*')">*</button>
+                <button class="key--operator" data-action="divide" onclick="operateInput('/')">/</button>
+                <button class="key--operator" data-action="divide" onclick="operateInput('!')">!</button>
+                <button class="key--operator" data-action="divide" onclick="operateInput('^')">^</button>
                 <button class="key--operator" data-action="divide" onclick="operateInput('')">Soon ;)</button>
                 <button class="key--operator" data-action="divide" onclick="operateInput('')">Soon ;)</button>
             </div>
@@ -43,6 +43,7 @@
             <button class="key--equal" data-action="calculate" onclick="calculate()">=</button>
             <button onclick="inputNumber('0')">0</button>
         </div>
+        <h1>NOTE! NOT TOUCHSCREEN <i>AND</i> KEYBOARD COMPATIBLE. USE ONE OR THE OTHER. ERRORS MAY OCCUR OTHERWISE. <br><br>FURTHERMORE, THE KEYDOWN OF ANY KEY OTHER THAN <u>+, -, *, /, !, ^, ESCAPE, SHIFT, 1, 2, 3, 4, 5, 6, 7, 8, 9, AND 0</u> MAY ALSO CAUSE ISSUES.</h1>
     </div>
 </body>
 <script src="./main.js"></script>

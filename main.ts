@@ -31,27 +31,27 @@ function operateInput(operator: string) {
         inputMemory = [];
         decimal_ = false;
         switch (operator) {
-            case "add":
+            case "+":
                 document.getElementById("inputValueBox")!.textContent = "+";
                 operationMemory = "add";
                 break;
-            case "subtract":
+            case "-":
                 document.getElementById("inputValueBox")!.textContent = "-";
                 operationMemory = "subtract";
                 break;
-            case "multiply":
+            case "*":
                 document.getElementById("inputValueBox")!.textContent = "*";
                 operationMemory = "multiply";
                 break;
-            case "divide":
+            case "/":
                 document.getElementById("inputValueBox")!.textContent = "/";
                 operationMemory = "divide";
                 break;
-            case "factorial":
+            case "!":
                 document.getElementById("inputValueBox")!.textContent = "!";
                 operationMemory = "factorial";
                 break;
-            case "exponent":
+            case "^":
                 document.getElementById("inputValueBox")!.textContent = "^";
                 operationMemory = "exponent";
                 break;
@@ -109,12 +109,15 @@ function calculate() {
 function factorial(input: number) {
     if (input == 0 || input == 1) {
         return 1;
-    } else {
+    } else if(input <= 170){
         let output: number = input;
         for (let i: number = input - 1; i > 1; i--) {
             output = output * i;
         }
         return output;
+    }
+    else{
+        return Infinity;
     }
 }
 
@@ -131,3 +134,24 @@ function updateInput(): void {
         inputMemory.join("");
     console.log(inputMemory);
 }
+
+// Add an event listener for keys
+document.addEventListener("keydown", (event: KeyboardEvent) => {
+    // Check if the key pressed is the "Enter" key or any key
+    let key: string = event.key;
+    if (key === "Enter") {
+        // Do something when the "Enter" key is pressed
+        console.log("Enter key was pressed!");
+        calculate();
+    } else if (key != "Shift") {
+        // Handle other keys here if needed
+        console.log("Key pressed: " + key);
+        if (!Number.isNaN(Number(key)) || key == ".") {
+            inputNumber(key);
+        } else if (key == "Escape") {
+            clearMemory();
+        } else {
+            operateInput(key);
+        }
+    }
+});
