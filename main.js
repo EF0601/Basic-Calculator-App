@@ -50,6 +50,10 @@ function operateInput(operator) {
                 document.getElementById("inputValueBox").textContent = "!";
                 operationMemory = "factorial";
                 break;
+            case "exponent":
+                document.getElementById("inputValueBox").textContent = "^";
+                operationMemory = "exponent";
+                break;
         }
         // updateInput();
     }
@@ -71,6 +75,9 @@ function calculate() {
                 break;
             case "divide":
                 document.getElementById("inputValueBox").textContent = String(firstMemory / secondMemory);
+                break;
+            case "exponent":
+                document.getElementById("inputValueBox").textContent = String(Math.pow(firstMemory, secondMemory));
                 break;
         }
     }
