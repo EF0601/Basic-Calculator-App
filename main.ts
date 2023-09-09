@@ -55,6 +55,9 @@ function operateInput(operator: string) {
                 document.getElementById("inputValueBox")!.textContent = "^";
                 operationMemory = "exponent";
                 break;
+            case "sqrt":
+                document.getElementById("inputValueBox")!.textContent = "root";
+                operationMemory = "sqrt";
         }
         // updateInput();
     }
@@ -90,6 +93,10 @@ function calculate() {
                     firstMemory ** secondMemory
                 );
                 break;
+            case "sqrt":
+                document.getElementById("inputValueBox")!.textContent = String(
+                    firstMemory ** (1 / secondMemory)
+                );
         }
     } else {
         if (operationMemory == "factorial") {
@@ -104,19 +111,23 @@ function calculate() {
     inputMemory = [];
     inputMemory.push(String(firstMemory));
     updateInput();
+    if ((firstMemory = NaN)) {
+        document.getElementById("inputValueBox")!.textContent =
+            "Let's keep it real.";
+        firstMemory = 0;
+    }
 }
 
 function factorial(input: number) {
     if (input == 0 || input == 1) {
         return 1;
-    } else if(input <= 170){
+    } else if (input <= 170) {
         let output: number = input;
         for (let i: number = input - 1; i > 1; i--) {
             output = output * i;
         }
         return output;
-    }
-    else{
+    } else {
         return Infinity;
     }
 }
