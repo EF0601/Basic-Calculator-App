@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/71d265c49d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,13 +15,13 @@
         <h2 id="inputValueBox">0</h2>
         <div id="flexBox">
             <div class="container" id="narrowGrid">
-                <button class="key--operator" data-action="add" onclick="operateInput('add')">+</button>
-                <button class="key--operator" data-action="subtract" onclick="operateInput('subtract')">-</button>
-                <button class="key--operator" data-action="multiply" onclick="operateInput('multiply')">*</button>
-                <button class="key--operator" data-action="divide" onclick="operateInput('divide')">/</button>
-                <button class="key--operator" data-action="divide" onclick="operateInput('factorial')">!</button>
-                <button class="key--operator" data-action="divide" onclick="operateInput('')">Soon ;)</button>
-                <button class="key--operator" data-action="divide" onclick="operateInput('')">Soon ;)</button>
+                <button class="key--operator" data-action="add" onclick="operateInput('+')"><i class="fas fa-plus"></i></button>
+                <button class="key--operator" data-action="subtract" onclick="operateInput('-')"><i class="fas fa-minus"></i></button>
+                <button class="key--operator" data-action="multiply" onclick="operateInput('*')"><i class="fas fa-times"></i></button>
+                <button class="key--operator" data-action="divide" onclick="operateInput('/')"><i class="fas fa-divide"></i></button>
+                <button class="key--operator" data-action="divide" onclick="operateInput('!')"><i class="fas fa-exclamation"></i></button>
+                <button class="key--operator" data-action="divide" onclick="operateInput('^')"><i class="fas fa-superscript"></i></button>
+                <button class="key--operator" data-action="divide" onclick="operateInput('sqrt')"><i class="fas fa-square-root-alt"></i></button>
                 <button class="key--operator" data-action="divide" onclick="operateInput('')">Soon ;)</button>
             </div>
             <div class="container">
@@ -43,6 +44,7 @@
             <button class="key--equal" data-action="calculate" onclick="calculate()">=</button>
             <button onclick="inputNumber('0')">0</button>
         </div>
+        <h1>NOTE! NOT TOUCHSCREEN <i>AND</i> KEYBOARD COMPATIBLE. USE ONE OR THE OTHER. ERRORS MAY OCCUR OTHERWISE. <br><br>FURTHERMORE, THE KEYDOWN OF ANY KEY OTHER THAN <u>+, -, *, /, !, ^, ESCAPE, SHIFT, 1, 2, 3, 4, 5, 6, 7, 8, 9, AND 0</u> MAY ALSO CAUSE ISSUES.</h1>
     </div>
 </body>
 <script src="./main.js"></script>
