@@ -30,25 +30,29 @@ function operateInput(operator) {
         inputMemory = [];
         decimal_ = false;
         switch (operator) {
-            case "add":
+            case "+":
                 document.getElementById("inputValueBox").textContent = "+";
                 operationMemory = "add";
                 break;
-            case "subtract":
+            case "-":
                 document.getElementById("inputValueBox").textContent = "-";
                 operationMemory = "subtract";
                 break;
-            case "multiply":
+            case "*":
                 document.getElementById("inputValueBox").textContent = "*";
                 operationMemory = "multiply";
                 break;
-            case "divide":
+            case "/":
                 document.getElementById("inputValueBox").textContent = "/";
                 operationMemory = "divide";
                 break;
-            case "factorial":
+            case "!":
                 document.getElementById("inputValueBox").textContent = "!";
                 operationMemory = "factorial";
+                break;
+            case "^":
+                document.getElementById("inputValueBox").textContent = "^";
+                operationMemory = "exponent";
                 break;
         }
         // updateInput();
@@ -72,6 +76,9 @@ function calculate() {
             case "divide":
                 document.getElementById("inputValueBox").textContent = String(firstMemory / secondMemory);
                 break;
+            case "exponent":
+                document.getElementById("inputValueBox").textContent = String(Math.pow(firstMemory, secondMemory));
+                break;
         }
     }
     else {
@@ -90,12 +97,15 @@ function factorial(input) {
     if (input == 0 || input == 1) {
         return 1;
     }
-    else {
+    else if (input <= 170) {
         var output = input;
         for (var i = input - 1; i > 1; i--) {
             output = output * i;
         }
         return output;
+    }
+    else {
+        return Infinity;
     }
 }
 function clearMemory() {
@@ -110,3 +120,26 @@ function updateInput() {
         inputMemory.join("");
     console.log(inputMemory);
 }
+// Add an event listener for keys
+document.addEventListener("keydown", function (event) {
+    // Check if the key pressed is the "Enter" key or any key
+    var key = event.key;
+    if (key === "Enter") {
+        // Do something when the "Enter" key is pressed
+        console.log("Enter key was pressed!");
+        calculate();
+    }
+    else if (key != "Shift") {
+        // Handle other keys here if needed
+        console.log("Key pressed: " + key);
+        if (!Number.isNaN(Number(key)) || key == ".") {
+            inputNumber(key);
+        }
+        else if (key == "Escape") {
+            clearMemory();
+        }
+        else {
+            operateInput(key);
+        }
+    }
+});

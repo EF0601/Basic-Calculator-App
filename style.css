@@ -55,10 +55,10 @@ button:hover {
     grid-template-rows: 25% 25% 25% 25%;
 }
 .footer {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 25% 25% 33% 17%;
+    grid-template-rows: 100%;
 }
 .footer button {
-    width: 33.333333%;
     height: 100px;
 }
