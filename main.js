@@ -54,6 +54,9 @@ function operateInput(operator) {
                 document.getElementById("inputValueBox").textContent = "^";
                 operationMemory = "exponent";
                 break;
+            case "sqrt":
+                document.getElementById("inputValueBox").textContent = "root";
+                operationMemory = "sqrt";
         }
         // updateInput();
     }
@@ -79,6 +82,14 @@ function calculate() {
             case "exponent":
                 document.getElementById("inputValueBox").textContent = String(Math.pow(firstMemory, secondMemory));
                 break;
+            case "sqrt":
+                if (secondMemory > 0) {
+                    document.getElementById("inputValueBox").textContent =
+                        String(Math.pow(firstMemory, (1 / secondMemory)));
+                }
+                else {
+                    document.getElementById("inputValueBox").textContent = "Let's keep it real.";
+                }
         }
     }
     else {
@@ -92,6 +103,11 @@ function calculate() {
     inputMemory = [];
     inputMemory.push(String(firstMemory));
     updateInput();
+    if ((firstMemory = NaN)) {
+        document.getElementById("inputValueBox").textContent =
+            "Let's keep it real.";
+        firstMemory = 0;
+    }
 }
 function factorial(input) {
     if (input == 0 || input == 1) {

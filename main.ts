@@ -94,9 +94,13 @@ function calculate() {
                 );
                 break;
             case "sqrt":
-                document.getElementById("inputValueBox")!.textContent = String(
-                    firstMemory ** (1 / secondMemory)
-                );
+                if (secondMemory > 0) {
+                    document.getElementById("inputValueBox")!.textContent =
+                        String(firstMemory ** (1 / secondMemory));
+                }
+                else {
+                    document.getElementById("inputValueBox")!.textContent = "Let's keep it real.";
+                }
         }
     } else {
         if (operationMemory == "factorial") {
